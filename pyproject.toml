@@ -1,0 +1,26 @@
+[project]
+name = "bb-mcp"
+version = "0.1.0"
+description = "Unofficial read-only MCP server for the BuzzerBeater public API"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastmcp>=4.1.3",
+    "httpx>=0.28.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.17.2",
+]
+
+[project.scripts]
+bb-mcp = "bb_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
